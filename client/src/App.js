@@ -3,6 +3,7 @@ import React from 'react'
 import './App.css'
 import NavBar from './Components/NavBar'
 import Home from './Components/Home'
+import Cart from './Containers/Cart'
 
 function App () {
   return (
@@ -10,13 +11,10 @@ function App () {
       <Router>
       <NavBar/>
         <Routes>
-          <Route Path='/' Render={() => <Home />} />
+          <Route exact path='/' element={<Home />} />
+          <Route exact path='/cart' element={<Cart />} />
         </Routes>
       </Router>
-      Hello World
-      <br/>
-      <label>make an entry: </label>
-      <input></input>
     </div>
   )
 }
