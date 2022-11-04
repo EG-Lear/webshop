@@ -1,13 +1,28 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Login from '../Containers/Login'
 
-const Home = () => {
+const Home = ({loggedIn, logInUser, logOutUser}) => {
+
+  const handleButton = () => {
+    logOutUser()
+  }
   
-  return (
-    <div>
-      Honey I'm Home!
-    </div>
-  )
+  if (loggedIn === false) {
+    return (
+      <div>
+       <Login logInUser={logInUser} />
+      </div>
+    )
+  }else if (loggedIn === true) {
+    return(
+      <div>
+        Welcome Home Darling!
+        <br/>
+        <button onClick={handleButton}>Log Out</button>
+      </div>
+    )
+  }
 }
 
 export default Home
