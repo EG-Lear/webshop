@@ -6,18 +6,50 @@ import Cart from './Containers/Cart'
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [user, setUser] = useState("")
   const navigate = useNavigate()
 
 
-  const logInUser = () => {
+  const logInUser = (u, a) => {
     setLoggedIn(true)
+    setUser(u)
+    console.log(a)
     navigate('/')
   }
 
   const logOutUser = () => {
-    setLoggedIn(false)
+    console.log("in logout")
+    fetch('/logout', {
+      method: 'DELETE'
+    })
+    .then(() => {
+      setLoggedIn(false)
+      setUser(null)
+    })
     navigate('/')
   }
+
+  useEffect(() => {
+    fetch('/me')
+    .then(res => {
+      if (res.status === 401) {
+        navigate('/')
+        alert("please log in")
+      }
+      if (res.ok) {
+        res.json()
+        .then(u => {
+          if (u.errors) {
+            alert(u.errors)
+          } else {
+            setLoggedIn(true)
+            setUser(u.username) 
+          }
+        })
+      }
+    })
+    
+  }, [])
 
   return (
     <div>    
