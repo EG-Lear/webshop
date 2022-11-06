@@ -1,7 +1,6 @@
 import {BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import './App.css'
-import NavBar from './Components/NavBar'
 import Home from './Components/Home'
 import Cart from './Containers/Cart'
 
@@ -21,14 +20,11 @@ function App () {
   }
 
   return (
-    <div>
-      <Router>
-        <NavBar/>
-        <Routes>
-          <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
-          <Route exact path='/cart' element={<Cart />} />
-        </Routes>
-      </Router>
+    <div>    
+      <Routes>
+        <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
+        <Route exact path='/cart' element={<Cart />} />
+      </Routes>
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Login from '../Containers/Login'
+import NavBar from './NavBar'
 
 const Home = ({loggedIn, logInUser, logOutUser}) => {
 
@@ -17,6 +18,7 @@ const Home = ({loggedIn, logInUser, logOutUser}) => {
   }else if (loggedIn === true) {
     return(
       <div>
+        <NavBar />
         Welcome Home Darling!
         <br/>
         <button onClick={handleButton}>Log Out</button>
