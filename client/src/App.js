@@ -13,7 +13,9 @@ function App () {
   const logInUser = (u, a) => {
     setLoggedIn(true)
     setUser(u)
-    console.log(a)
+    console.log("moo")
+    console.log(a.username)
+    console.log('baaaa')
     navigate('/')
   }
 

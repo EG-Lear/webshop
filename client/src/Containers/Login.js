@@ -30,8 +30,10 @@ const Login = ({logInUser}) => {
         console.log(data)
         alert(data.errors)
       } else {
+        console.log("woof")
         console.log(data)
-        logInUser(data.username)
+        logInUser(data.username, data)
+        console.log("rawr")
       }
     })
   }
