@@ -22,6 +22,12 @@ const SignUp = ({loginUser}) => {
         <label>Password: </label>
         <input></input>
       </form>
+      <br/>
+      cancel registration
+      <br/>
+      <Link to='/'>
+        <button>cancel</button>
+      </Link>
     </div>
   )
 }

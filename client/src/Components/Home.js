@@ -14,7 +14,7 @@ const Home = ({loggedIn, logInUser, logOutUser}) => {
       <div>
         <Login logInUser={logInUser} />
         <Link to='/signup'>
-          <button>Sign Up</button>
+          <button>Register</button>
         </Link>
       </div>
     )
