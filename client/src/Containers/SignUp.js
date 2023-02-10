@@ -10,6 +10,17 @@ const SignUp = ({loginUser}) => {
         <br/>
         <label>Username: </label>
         <input></input>
+        <br/>
+        <br/>
+        Please create a password
+        <br/>
+        <label>Password: </label>
+        <input></input>
+        <br/>
+        Confirm your password
+        <br/>
+        <label>Password: </label>
+        <input></input>
       </form>
     </div>
   )
