@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import './App.css'
+import SignUp from './Containers/SignUp'
 import Home from './Components/Home'
 import Cart from './Containers/Cart'
 
@@ -58,6 +59,7 @@ function App () {
       <Routes>
         <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
         <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/signup' element={<SignUp logInUser={logInUser}/>} />
       </Routes>
     </div>
   )

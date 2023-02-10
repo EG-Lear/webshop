@@ -12,11 +12,14 @@ const Home = ({loggedIn, logInUser, logOutUser}) => {
   if (loggedIn === false) {
     return (
       <div>
-       <Login logInUser={logInUser} />
+        <Login logInUser={logInUser} />
+        <Link to='/signup'>
+          <button>Sign Up</button>
+        </Link>
       </div>
     )
-  }else if (loggedIn === true) {
-    return(
+  } else if (loggedIn === true) {
+    return (
       <div>
         <NavBar />
         Welcome Home Darling!
