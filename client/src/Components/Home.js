@@ -22,7 +22,8 @@ const Home = ({loggedIn, logInUser, logOutUser}) => {
     return (
       <div>
         <NavBar />
-        Welcome Home Darling!
+        <br/>
+        Welcome to E-Com 2000 where we satisfy your e-commerce needs.
         <br/>
         <button onClick={handleButton}>Log Out</button>
       </div>

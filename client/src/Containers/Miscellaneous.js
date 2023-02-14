@@ -1,16 +1,15 @@
 import React from 'react'
 import NavBar from '../Components/NavBar'
 
-const Cart = () => {
+const Miscellaneous = () => {
 
   return (
-    
     <div>
       <NavBar />
       <br/>
-      in cart
+      Misc
     </div>
   )
 }
 
-export default Cart
+export default Miscellaneous

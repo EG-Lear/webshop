@@ -4,6 +4,8 @@ import './App.css'
 import Registration from './Containers/Registration'
 import Home from './Components/Home'
 import Cart from './Containers/Cart'
+import Electronics from './Containers/Electronics'
+import Miscellaneous from './Containers/Miscellaneous'
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -59,7 +61,9 @@ function App () {
       <Routes>
         <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
         <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/electronics' element={<Electronics />} />
         <Route exact path='/registration' element={<Registration logInUser={logInUser}/>} />
+        <Route exact path='/miscellaneous' element={<Miscellaneous />}/>
       </Routes>
     </div>
   )
