@@ -6,6 +6,8 @@ import Home from './Components/Home'
 import Cart from './Containers/Cart'
 import Electronics from './Containers/Electronics'
 import Miscellaneous from './Containers/Miscellaneous'
+import Clothing from './Containers/Clothing'
+import Entertainment from './Containers/Entertainment'
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -61,9 +63,11 @@ function App () {
       <Routes>
         <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
         <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/clothing' element={<Clothing />} />
         <Route exact path='/electronics' element={<Electronics />} />
+        <Route exact path='/entertainment' element={<Entertainment />} />
         <Route exact path='/registration' element={<Registration logInUser={logInUser}/>} />
-        <Route exact path='/miscellaneous' element={<Miscellaneous />}/>
+        <Route exact path='/miscellaneous' element={<Miscellaneous />} />
       </Routes>
     </div>
   )
