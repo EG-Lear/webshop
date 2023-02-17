@@ -8,6 +8,7 @@ import Electronics from './Containers/Electronics'
 import Miscellaneous from './Containers/Miscellaneous'
 import Clothing from './Containers/Clothing'
 import Entertainment from './Containers/Entertainment'
+import AdminPage from './Components/AdminPage'
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -20,8 +21,14 @@ function App () {
     setUser(u)
     console.log(a.username)
     console.log('baaaa')
-    navigate('/')
-    console.log(a.admin)
+    // navigate('/')
+    // console.log(a.admin)
+    if (a.admin === true) {
+      console.log('truey')
+      navigate('/adminPage')
+    } else {
+      navigate('/')
+    }
   }
 
   const logOutUser = () => {
@@ -63,6 +70,7 @@ function App () {
       <Routes>
         <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
         <Route exact path='/cart' element={<Cart />} />
+        <Route exact path='/adminPage' element={<AdminPage />} />
         <Route exact path='/clothing' element={<Clothing />} />
         <Route exact path='/electronics' element={<Electronics />} />
         <Route exact path='/entertainment' element={<Entertainment />} />
