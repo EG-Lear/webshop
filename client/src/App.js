@@ -18,10 +18,10 @@ function App () {
   const logInUser = (u, a) => {
     setLoggedIn(true)
     setUser(u)
-    console.log("moo")
     console.log(a.username)
     console.log('baaaa')
     navigate('/')
+    console.log(a.admin)
   }
 
   const logOutUser = () => {
@@ -50,7 +50,7 @@ function App () {
             alert(u.errors)
           } else {
             setLoggedIn(true)
-            setUser(u.username) 
+            setUser(u.username)
           }
         })
       }

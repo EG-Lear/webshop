@@ -21,6 +21,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.permit(:username, :password, :password_confirmation)
+    defaults = { admin: false }
+    params.permit(:username, :password, :password_confirmation).reverse_merge(defaults)
   end
 end
