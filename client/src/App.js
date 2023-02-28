@@ -9,6 +9,8 @@ import Miscellaneous from './Containers/Miscellaneous'
 import Clothing from './Containers/Clothing'
 import Entertainment from './Containers/Entertainment'
 import AdminPage from './Components/AdminPage'
+import Discounts from './Containers/Discounts'
+import Inventory from './Containers/Inventory'
 
 function App () {
   const [loggedIn, setLoggedIn] = useState(false)
@@ -69,11 +71,13 @@ function App () {
     <div>    
       <Routes>
         <Route exact path='/' element={<Home loggedIn={loggedIn} logInUser={logInUser} logOutUser={logOutUser}/>} />
-        <Route exact path='/cart' element={<Cart />} />
         <Route exact path='/adminPage' element={<AdminPage />} />
+        <Route exact path='/cart' element={<Cart />} />
         <Route exact path='/clothing' element={<Clothing />} />
+        <Route exact path='/discounts' element={<Discounts />} />
         <Route exact path='/electronics' element={<Electronics />} />
         <Route exact path='/entertainment' element={<Entertainment />} />
+        <Route exact path='/inventory' element={<Inventory/>} />
         <Route exact path='/registration' element={<Registration logInUser={logInUser}/>} />
         <Route exact path='/miscellaneous' element={<Miscellaneous />} />
       </Routes>
