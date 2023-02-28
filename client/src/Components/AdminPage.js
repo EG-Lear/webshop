@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom' 
 import { Link } from 'react-router-dom'
+import AdminNavBar from './AdminNavBar'
 
 const AdminPage = () => {
   const navigate = useNavigate()
@@ -21,6 +22,7 @@ const AdminPage = () => {
 
   return(
     <div>
+      <AdminNavBar />
       admin viewer
       <br/>
       <Link to='/'>
