@@ -4,7 +4,7 @@ import AdminNavBar from '../Components/AdminNavBar'
 const Inventory = () => {
   const [values, setValues] = useState(
     {
-      item: "test",
+      product: "test",
       picture: "a url",
       price: 0,
       description: "a blank description",
@@ -28,8 +28,8 @@ const Inventory = () => {
       <br/>
       <br/>
       <form>
-        <label>Item: </label>
-        <input id='item' value={values.item} onChange={handleChange}></input>
+        <label>Product: </label>
+        <input id='product' value={values.item} onChange={handleChange}></input>
         <br/>
         <label>Picture: </label>
         <input id='picture' value={values.picture} onChange={handleChange}></input>
