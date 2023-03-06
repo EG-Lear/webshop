@@ -47,6 +47,15 @@ const Inventory = () => {
     })
   }
 
+  const handleShow = (event) => {
+    event.preventDefault()
+    fetch('/products')
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+    })
+  }
+
   return (
     <div>
       <AdminNavBar />
@@ -71,6 +80,10 @@ const Inventory = () => {
         <br/>
         <button>Add Product</button>
       </form>
+      <br/>
+      <br/>
+      <br/>
+      <button onClick={handleShow}>show products</button>
     </div>
   )
 }
