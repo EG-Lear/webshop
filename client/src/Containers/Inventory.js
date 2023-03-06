@@ -21,13 +21,39 @@ const Inventory = () => {
     })
   }
 
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log('sub')
+    fetch('products', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        product: values.product,
+        price: values.price,
+        description: values.description,
+        category: values.category,
+        picture_url: values.picture
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if (data.errors) {
+        alert(data.errors)
+      } else (
+        console.log(data)
+      )
+    })
+  }
+
   return (
     <div>
       <AdminNavBar />
       inventory
       <br/>
       <br/>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Product: </label>
         <input id='product' value={values.item} onChange={handleChange}></input>
         <br/>
@@ -42,6 +68,8 @@ const Inventory = () => {
         <br/>
         <label>Category: </label>
         <input id='category' value={values.category} onChange={handleChange}></input>
+        <br/>
+        <button>Add Product</button>
       </form>
     </div>
   )
